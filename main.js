@@ -1,10 +1,10 @@
 const defaultTab = ["walcz", "przemyśl to jeszcze raz"]
 let resultTab = ["walcz", "przemyśl to jeszcze raz"];
 
-const divshow = document.getElementById('show')
+const divshow = document.getElementById('showRandomResult')
 
-const input = document.querySelector('input');
-const btnAdd = document.querySelector('button');
+const input = document.querySelector('.insertText');
+const btnAdd = document.querySelector('.add');
 const btnReset = document.getElementById('reset');
 const btnAdvice = document.getElementById('showAdvice');
 const btnCapa = document.getElementById('showCapabilities');
@@ -30,18 +30,24 @@ btnAdd.addEventListener('click', (e) => {
 
 })
 
+// btnReset.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     resultTab = [];
+//     input.value = '';
+//     console.log(resultTab)
+//     alert("Entries reset")
+//     div.textContent = '';
+// })
+
 btnReset.addEventListener('click', (e) => {
     e.preventDefault();
-    resultTab = [];
-    input.value = '';
-    console.log(resultTab)
-    alert("Entries reset")
-    div.textContent = '';
+    input.classList.add('reset');
+
 })
 
 btnCapa.addEventListener('click', (e) => {
     e.preventDefault();
-    alert(defaultTab + " " + resultTab)
+    alert(defaultTab.join(", ") + resultTab.join(", "))
 
 })
 
